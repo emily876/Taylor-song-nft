@@ -69,10 +69,7 @@ export default function Home() {
         mintTransaction
       );
       console.log("Mint Card Transaction:", mintResponse);
-      setcardimage(mintResponse.events[1].data.nft)
       setDrawnCard(mintResponse.events[1].data.new_name);
-      // setmintdone(true);
-      // setwritesong(false);
     } catch (error) {
       console.error("Error handling mint", error);
     } finally {
