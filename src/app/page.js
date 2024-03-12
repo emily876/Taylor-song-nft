@@ -107,7 +107,7 @@ export default function Home() {
   };
 
   const linergradient = {
-    background: 'linear-gradient(to right, #5FBDFF 10%, #FFFD8C 50%, #FFFD8C 50%, #6420AA 100%)',
+    background: 'linear-gradient(to right, #5FBDFF 10%, #FFFD8C 50%, #FFFD8C 50%, #6196A6 100%)',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
   }
@@ -116,7 +116,7 @@ export default function Home() {
     <main
       className="flex min-h-screen flex-col items-center justify-between p-24"
       style={{
-        backgroundImage: "url(/cover.png)", // Path to your background image
+        backgroundImage: "url(/cover.webp)", // Path to your background image
         backgroundSize: "cover", // Adjust as needed
         backgroundPosition: "center", // Adjust as needed
       }}
@@ -238,25 +238,15 @@ export default function Home() {
 
         {cardimage && !writesong ? (
           <div>
-            <h2 className="mt-10 text-black font-bold text-lg">{drawnCard}</h2>
-            {position === "upright" ? (
-              <img
+            <h2 className="mt-10 text-white font-bold text-2xl pb-4" style={{fontStyle:'oblique'}}>{drawnCard}</h2>
+
+<img
                 src={`${"https://nftstorage.link/ipfs"}/${
                   cardimage.split("ipfs://")[1]
                 }`}
                 width="200"
                 height="200"
               />
-            ) : (
-              <img
-                src={`${"https://nftstorage.link/ipfs"}/${
-                  cardimage.split("ipfs://")[1]
-                }`}
-                width="200"
-                height="200"
-                style={{ transform: "rotate(180deg)" }}
-              />
-            )}
           </div>
         ) : (
           <div className="rounded-lg">

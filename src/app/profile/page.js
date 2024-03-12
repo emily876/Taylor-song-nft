@@ -59,7 +59,7 @@ export default function Profile() {
     <main
       className="flex min-h-screen flex-col items-center justify-between p-24"
       style={{
-        backgroundImage: "url(/cover.png)", // Path to your background image
+        backgroundImage: "url(/cover.webp)", // Path to your background image
         backgroundSize: "cover", // Adjust as needed
         backgroundPosition: "center", // Adjust as needed
       }}
