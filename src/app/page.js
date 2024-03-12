@@ -251,6 +251,7 @@ export default function Home() {
         ) : (
           <div className="rounded-lg">
             <Image src="/musicnft.webp" width="400" height="400" />
+            <img src="/6.png" style={{position: 'absolute', top: 0, left: 0}}/>
           </div>
         )}
       </div>

@@ -19,7 +19,7 @@ const NftdataCard = ({
 
   useEffect(() => {
     const fetchMetaData = async () => {
-    const ipfsCid = metaData.token_uri.replace("ipfs://", "");
+    const ipfsCid = metaData.current_token_data.token_uri.replace("ipfs://", "");
 
   setImageSrc(ipfsCid);
     }
@@ -65,14 +65,14 @@ const NftdataCard = ({
               <h3 className="leading-12 mb-2 text-white">
                 <div className="lg:flex md:flex justify-between">
                   <div className="text-xl font-bold mt-6">
-                        {metaData.token_name}
+                        {metaData.current_token_data.token_name}
                   </div>
                 </div>
               </h3>
 
               <div className="rounded-xl">
                 <div className="text-sm text-white text-start flex mt-2">
-                    {metaData.description}
+                    {metaData.current_token_data.description}
                 </div>
               </div>
             </div>
