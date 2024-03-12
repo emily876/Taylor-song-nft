@@ -184,6 +184,7 @@ export default function Home() {
               <div>
                 {cardimage && !writesong && (
                   <div>
+                    <h2 className="mt-4 text-white font-bold text-2xl pb-4" style={{fontStyle:'oblique'}}>{drawnCard}</h2>
                     <div className="flex gap-4 pb-8">
                       <button
                         onClick={() => {
@@ -238,20 +239,22 @@ export default function Home() {
 
         {cardimage && !writesong ? (
           <div>
-            <h2 className="mt-10 text-white font-bold text-2xl pb-4" style={{fontStyle:'oblique'}}>{drawnCard}</h2>
-
-<img
+            <div className="rounded-lg" style={{position:'relative'}}>
+            <Image src="/musicnft.webp" width="400" height="400"/>
+            <img
                 src={`${"https://nftstorage.link/ipfs"}/${
                   cardimage.split("ipfs://")[1]
                 }`}
-                width="200"
-                height="200"
+                width="245"
+                height="245"
+                className="rounded-xl transform -skew-y-6"
+                style={{position: 'absolute', top: 50, left: 70}}
               />
+              </div>
           </div>
         ) : (
           <div className="rounded-lg">
-            <Image src="/musicnft.webp" width="400" height="400" />
-            <img src="/6.png" style={{position: 'absolute', top: 0, left: 0}}/>
+            <Image src="/musicnft.webp" width="400" height="400"/>
           </div>
         )}
       </div>
