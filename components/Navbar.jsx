@@ -41,7 +41,7 @@ const Navbar = () => {
         alert(`Switch to Testnet in your wallet`);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err, err.message);
     }
   };
 
@@ -88,18 +88,7 @@ const Navbar = () => {
           </div>
           </div>
       ) : (
-        <>
         <button onClick={connectWallet}>Connect wallet</button>
-        <button
-            onClick={handleDeleteCookie}
-            style={logout}
-            className="mx-auto hover:text-red-400 text-black text-lg font-bold"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            Logout
-          </button>
-          </>
       )}
     </div>
   );
