@@ -7,7 +7,7 @@ import Link from "next/link";
 const REACT_APP_GATEWAY_URL = "https://gateway.netsepio.com/";
 
 const Navbar = () => {
-  const wallet = Cookies.get("tarot_wallet");
+  const wallet = Cookies.get("taylor_wallet");
 
   const [hovered, setHovered] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState("");
@@ -74,9 +74,9 @@ const Navbar = () => {
           const token = await response?.data?.payload?.token;
           const userId = await response?.data?.payload?.userId;
           // localStorage.setItem("platform_token", token);
-          Cookies.set("tarot_token", token, { expires: 7 });
-          Cookies.set("tarot_wallet", account.address, { expires: 7 });
-          Cookies.set("tarot_userid", userId, { expires: 7 });
+          Cookies.set("taylor_token", token, { expires: 7 });
+          Cookies.set("taylor_wallet", account.address, { expires: 7 });
+          Cookies.set("taylor_userid", userId, { expires: 7 });
 
           window.location.reload();
         } catch (error) {
@@ -91,8 +91,8 @@ const Navbar = () => {
   };
 
   const handleDeleteCookie = () => {
-    Cookies.remove("tarot_wallet");
-    Cookies.remove("tarot_token");
+    Cookies.remove("taylor_wallet");
+    Cookies.remove("taylor_token");
     window.location.href = "/";
   };
 

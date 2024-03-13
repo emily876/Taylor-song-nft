@@ -21,10 +21,10 @@ export default function Home() {
   const [newname, setnewname] = useState("");
   const [editmode, seteditmode] = useState(false);
 
-  const wallet = Cookies.get("tarot_wallet");
+  const wallet = Cookies.get("taylor_wallet");
 
   const mintreading = async () => {
-    const wallet = Cookies.get("tarot_wallet");
+    const wallet = Cookies.get("taylor_wallet");
     setLoading(true);
 
     try {
@@ -53,7 +53,7 @@ export default function Home() {
   };
 
   const editname = async () => {
-    const wallet = Cookies.get("tarot_wallet");
+    const wallet = Cookies.get("taylor_wallet");
     setLoading(true);
 
     try {
@@ -78,7 +78,7 @@ export default function Home() {
   };
 
   const deletenft = async () => {
-    const wallet = Cookies.get("tarot_wallet");
+    const wallet = Cookies.get("taylor_wallet");
     setLoading(true);
 
     try {

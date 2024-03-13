@@ -16,7 +16,7 @@ export default function Profile() {
 
   useEffect(() => {
     const check = () => {
-      const wallet = Cookies.get("tarot_wallet");
+      const wallet = Cookies.get("taylor_wallet");
       if(wallet)
       {
         setwallet(wallet);
@@ -34,7 +34,7 @@ export default function Profile() {
     const vpnnft = async () => {
       setLoading(true);
       try {
-        const wallet = Cookies.get("tarot_wallet");
+        const wallet = Cookies.get("taylor_wallet");
 
         const graphqlbody = {
           query: `
