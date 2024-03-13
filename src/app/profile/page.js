@@ -12,8 +12,23 @@ const graphqlaptos = "https://indexer-testnet.staging.gcp.aptosdev.com/v1/graphq
 export default function Profile() {
   const [loading, setLoading] = useState(false);
   const [nftdata, setnftdata] = useState(null);
+  const [wallet, setwallet] = useState("wallet");
 
-  const wallet = Cookies.get("tarot_wallet");
+  useEffect(() => {
+    const check = () => {
+      const wallet = Cookies.get("tarot_wallet");
+      if(wallet)
+      {
+        setwallet(wallet);
+      }
+      else{
+        setwallet(null);
+      }
+    }
+
+    check();
+  }, [])
+  
 
   useEffect(() => {
     const vpnnft = async () => {
@@ -142,9 +157,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <NftdataContainer metaDataArray={nftdata} MyReviews={false} />
-
-      {!wallet && (
+      {!wallet ? (
         <div
           style={{ backgroundColor: "#222944E5" }}
           className="flex overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center w-full max-h-full"
@@ -153,28 +166,6 @@ export default function Profile() {
           <div className="relative p-4 lg:w-1/3 w-full max-w-2xl max-h-full">
             <div className="relative rounded-lg shadow bg-black text-white">
               <div className="flex items-center justify-end p-4 md:p-5 rounded-t dark:border-gray-600">
-                {/* <button
-                  onClick={() => setques(false)}
-                  type="button"
-                  className="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  <svg
-                    className="w-3 h-3"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 14"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                    />
-                  </svg>
-                  <span className="sr-only">Close modal</span>
-                </button> */}
               </div>
 
               <div className="p-4 space-y-4">
@@ -193,6 +184,8 @@ export default function Profile() {
             </div>
           </div>
         </div>
+      ):(
+        <NftdataContainer metaDataArray={nftdata} MyReviews={false} />
       )}
 
       {loading && (
