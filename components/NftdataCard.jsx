@@ -126,9 +126,9 @@ const NftdataCard = ({
               </h3>
             </div>
 
-            <div className="flex justify-between p-2">
-              <button onClick={()=>{seteditmode(true)}}>Edit name</button>
-              <button onClick={delnft}>Delete NFT</button>
+            <div className="flex justify-between p-2 text-sm font-semibold">
+              <button onClick={()=>{seteditmode(true)}} style={{color: '#56A7A7'}}>Edit name</button>
+              <button onClick={delnft} style={{color:'#F06292'}}>Delete NFT</button>
             </div>
           </div>
         </div>
