@@ -88,7 +88,10 @@ const Navbar = () => {
           </div>
           </div>
       ) : (
+        <>
         <button onClick={connectWallet}>Connect wallet</button>
+        <button onClick={wallet.disconnect()}>disconnect</button>
+        </>
       )}
     </div>
   );
