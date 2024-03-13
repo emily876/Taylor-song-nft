@@ -50,6 +50,11 @@ const Navbar = () => {
     window.location.href = "/";
   };
 
+  const disconnect = async () => {
+    const wallet = getAptosWallet();
+    await wallet.disconnect();
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -90,7 +95,7 @@ const Navbar = () => {
       ) : (
         <>
         <button onClick={connectWallet}>Connect wallet</button>
-        <button onClick={wallet.disconnect()}>disconnect</button>
+        <button onClick={disconnect}>disconnect</button>
         </>
       )}
     </div>
