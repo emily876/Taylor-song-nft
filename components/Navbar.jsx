@@ -119,7 +119,7 @@ const Navbar = () => {
           <div className="flex gap-4">
           <Link href="/profile">{avatarUrl && <img src={avatarUrl} alt="Avatar" style={{width: 45}}/>} </Link>
           <div>
-          <div className="ltext-black rounded-lg text-lg font-bold text-center">
+          <div className="text-black rounded-lg text-lg font-bold text-center">
             {wallet.slice(0, 4)}...{wallet.slice(-4)}
           </div>
           <button
@@ -135,7 +135,7 @@ const Navbar = () => {
           </div>
       ) : (
         <>
-        <button onClick={connectWallet}>Connect wallet</button>
+        <button onClick={connectWallet} className="text-black">Connect wallet</button>
         </>
       )}
     </div>

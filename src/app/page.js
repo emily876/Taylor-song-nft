@@ -160,7 +160,7 @@ export default function Home() {
                     placeholder="Write song name here"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="p-2 rounded-lg w-full focus:outline-none"
+                    className="p-2 rounded-lg w-full focus:outline-none text-black"
                   />
                   {wallet ? (<button
                     onClick={mintreading}
